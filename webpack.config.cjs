@@ -18,7 +18,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)$/,
+        test: /\.ts$|tsx/,
         exclude: /node_modules/,
         use: {
           loader: 'ts-loader',
@@ -28,12 +28,16 @@ module.exports = {
         },
       },
       {
-        test: /\.scss$/,
+        test: /\.css$|.scss/,
         use: [
           'style-loader',
           'css-loader',
           'sass-loader'
         ]
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.svg$/,

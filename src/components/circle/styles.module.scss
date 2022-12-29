@@ -1,0 +1,11 @@
+@import '/src/styles/vars';
+@import '/src/styles/temp';
+
+.circle {
+  @extend %flex-center;
+  position: relative;
+  width: 530px;
+  height: 530px;
+  border-radius: 50%;
+  transition: all 0.9s ease-in-out;
+}

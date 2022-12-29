@@ -1,11 +1,11 @@
-import * as React from 'react'
-import Button from '~components/button'
+import React from 'react'
+import Circle from '~components/circle'
+import './styles/index.css'
 
 const App = () => {
   return (
     <div>
-      <h1>Hello World</h1>
-      <Button />
+      <Circle />
     </div>
   )
 }
