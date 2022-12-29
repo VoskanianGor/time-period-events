@@ -1,7 +1,7 @@
 interface ICords {
-  x: number;
-  y: number;
-  r: number;
+  x: number
+  y: number
+  r: number
 }
 
-export default ICords;
+export default ICords

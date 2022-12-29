@@ -1,0 +1,12 @@
+@import '/src/styles/vars';
+@import '/src/styles/temp';
+
+.wrapper {
+  @extend %flex-center;
+  @extend %flex-col;
+
+  max-width: 1440px;
+  height: 100vh;
+  margin: 0 auto;
+  border-inline: 1px solid rgba($c-primary, 0.1);
+}

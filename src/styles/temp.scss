@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+%flex {
+  display: flex;
+}
+
 %flex-col {
   flex-direction: column;
 }
