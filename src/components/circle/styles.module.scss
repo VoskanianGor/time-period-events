@@ -1,9 +1,41 @@
 @import '/src/styles/vars';
 @import '/src/styles/temp';
 
+%layout-line {
+  content: '';
+  background: $c-primary;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.wrapper {
+  position: relative;
+  isolation: isolate;
+
+  &::before {
+    @extend %layout-line;
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 100vh;
+  }
+
+  &::after {
+    @extend %layout-line;
+
+    position: absolute;
+    top: 50%;
+    left: -50vw;
+    width: 150vw;
+    height: 1px;
+  }
+}
+
 .circle {
   @extend %flex-center;
-  position: relative;
+
   width: 530px;
   height: 530px;
   border-radius: 50%;
