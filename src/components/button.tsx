@@ -1,5 +1,5 @@
 import * as React from 'react'
 
 export default function Button() {
-	return <button>press</button>
+  return <button type='button'>press</button>
 }

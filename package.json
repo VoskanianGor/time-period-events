@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "rome:check": "npx rome check --apply-suggested ./src",
+    "rome:format": "npx rome format ./src --write"
   },
   "browser": {
-    "[module-name]": false   
+    "[module-name]": false
   },
   "type": "module",
   "author": "",
@@ -23,6 +25,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
+    "rome": "^11.0.0",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.4.2",
