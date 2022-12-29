@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import type { FC } from 'react'
 import styles from './styles.module.scss'
+import { useGlobalState } from '~hooks/use-global-state'
+import CountUp from 'react-countup'
 
 interface IYears {
-  years: [number | string, number | string]
+  years: [number, number]
 }
 
 const Years: FC<IYears> = ({ years }) => {
@@ -11,8 +13,13 @@ const Years: FC<IYears> = ({ years }) => {
 
   return (
     <div className={styles.years}>
-      <div className={styles.start}>{start}</div>
-      <div className={styles.end}>{end}</div>
+      <CountUp
+        className={styles.start}
+        start={start - 10}
+        end={start}
+        duration={1}
+      />
+      <CountUp className={styles.end} start={end - 10} end={end} duration={1} />
     </div>
   )
 }
