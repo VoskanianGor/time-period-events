@@ -22,7 +22,7 @@ const EventSlider: FC<IEventSlider> = ({ events }) => {
         slidesPerView={3}
       >
         {events.map((event) => (
-          <SwiperSlide>
+          <SwiperSlide key={event.year} className={styles.slide}>
             <Event {...event} />
           </SwiperSlide>
         ))}

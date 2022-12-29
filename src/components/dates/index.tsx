@@ -1,13 +1,20 @@
 import React from 'react'
+import type { FC } from 'react'
 import styles from './styles.module.scss'
 
-const Dates = () => {
+interface IYears {
+  years: [number | string, number | string]
+}
+
+const Years: FC<IYears> = ({ years }) => {
+  const [start, end] = years
+
   return (
-    <div className={styles.dates}>
-      <div className={styles.start}>2015</div>
-      <div className={styles.end}>2022</div>
+    <div className={styles.years}>
+      <div className={styles.start}>{start}</div>
+      <div className={styles.end}>{end}</div>
     </div>
   )
 }
 
-export default Dates
+export default Years

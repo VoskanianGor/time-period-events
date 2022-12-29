@@ -1,8 +1,9 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import type { FC } from 'react'
 import useCirclePoints from '~hooks/use-circle-points'
+import { getGlobalState } from '~hooks/use-global-state'
 import CircleOutline from './circle-outline'
-import Dates from '~components/dates'
+import Years from '~components/dates'
 import Point from './point'
 import styles from './styles.module.scss'
 
@@ -11,12 +12,13 @@ interface ICircle {
 }
 
 const Circle: FC<ICircle> = ({ timePeriods }) => {
+  const activeTimePeriod = getGlobalState('activeTimePeriod')
   const { points, rotate, activePoint, circleRef, onPointClick } =
     useCirclePoints(timePeriods)
 
   return (
     <div className={styles.wrapper}>
-      <Dates />
+      <Years years={timePeriods[activeTimePeriod].years} />
       <div
         className={styles.circle}
         ref={circleRef}
