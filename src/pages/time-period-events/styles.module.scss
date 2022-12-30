@@ -6,10 +6,9 @@
   @extend %flex-col;
 
   max-width: 1440px;
-  height: 100vh;
+  width: 100%;
   margin: 0 auto;
   border-inline: 1px solid rgba($c-primary, 0.1);
-  overflow: hidden;
 
   @media screen and (max-width: $bp-tablet) {
     gap: 100px;

@@ -15,6 +15,7 @@ interface ICircleContext {
   rotate: number
 }
 
+// generate random time periods every time when the app is loaded
 const timePeriods = generateRandomPeriods()
 
 const CircleContext = createContext<ICircleContext>({} as ICircleContext)

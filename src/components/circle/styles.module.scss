@@ -41,8 +41,9 @@
 .circle {
   @extend %flex-center;
 
-  width: 530px;
-  height: 530px;
+  --dim: clamp(18.69rem, calc(15.80rem + 14.44vw), 33.13rem);
+  width: var(--dim);
+  height: var(--dim);
   border-radius: 50%;
   transition: all 0.9s ease-in-out;
 }

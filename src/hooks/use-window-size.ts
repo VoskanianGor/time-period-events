@@ -22,14 +22,11 @@ const useWindowSize = ({
   })
 
   useEffect(() => {
-    // only execute all the code below in client side
     if (typeof window !== 'undefined') {
-      // Handler to call on window resize
       const handleResize = () => {
         const width = window.innerWidth ?? 0
         const height = window.innerHeight ?? 0
 
-        // Set window width/height to state
         setWindowSize({
           width,
           height,
@@ -37,18 +34,15 @@ const useWindowSize = ({
         })
       }
 
-      // Add event listener
       window.addEventListener('resize', handleResize)
 
-      // Call handler right away so state gets updated with initial window size
       handleResize()
 
-      // Remove event listener on cleanup
       return () => window.removeEventListener('resize', handleResize)
     }
 
     return void 0
-  }, [matchWith]) // Empty array ensures that effect is only run on mount
+  }, [matchWith])
 
   return windowSize
 }

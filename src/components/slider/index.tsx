@@ -12,9 +12,7 @@ import 'swiper/css'
 const EventSlider = () => {
   const { activeTimePeriod, timePeriods } = useCircleContext()
   const events = timePeriods[activeTimePeriod].events
-  const { isMatchWith, width } = useWindowSize({ matchWith: 768 })
-
-  console.log(isMatchWith)
+  const { isMatchWith } = useWindowSize({ matchWith: 768 })
 
   return (
     <div className={styles.slider}>

@@ -18,6 +18,14 @@ button {
   cursor: pointer;
 }
 
+main {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+}
+
 .swiper-pagination {
   @media (max-width: 768px) {
     position: absolute;
