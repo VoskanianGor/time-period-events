@@ -1,12 +1,13 @@
-import * as React from 'react'
-import Button from '~components/button'
+import React from 'react'
+import Circle from '~components/circle'
+import TimePeriodEvents from './pages/time-period-events'
+import './styles/index.css'
 
 const App = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
-      <Button />
-    </div>
+    <main>
+      <TimePeriodEvents />
+    </main>
   )
 }
 

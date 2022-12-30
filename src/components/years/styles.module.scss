@@ -1,0 +1,28 @@
+@import '/src/styles/vars';
+@import '/src/styles/temp';
+
+.years {
+  @extend %flex-center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  gap: 10ch;
+}
+
+.year {
+  font-weight: 700;
+  font-size: 200px;
+  line-height: 80%;
+  text-align: center;
+  letter-spacing: -0.02em;
+
+  &:first-child {
+    color: $c-date-start;
+  }
+
+  &:last-child {
+    color: $c-date-end;
+  }
+}

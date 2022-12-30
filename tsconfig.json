@@ -9,19 +9,36 @@
 		"moduleResolution": "node",
 		"outDir": "./dist",
 		"rootDir": "./src",
+		"allowSyntheticDefaultImports": true,
 		"forceConsistentCasingInFileNames": true,
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true,
-    "baseUrl": ".",
-    "paths": {
-      "~assets/*": ["./public/assets/*"],
-      "~constants/*": ["./src/constants/*"],
-      "~components/*": ["./src/components/*"],
-      "~hooks/*": ["./src/hooks/*"],
-      "~store/*": ["./src/store/*"],
-      "~interfaces/*": ["./src/interfaces/*"],
-      "~utils/*": ["./src/utils/*"]
-    }
+		"baseUrl": ".",
+		"paths": {
+			"~assets/*": [
+				"./public/assets/*"
+			],
+			"~constants/*": [
+				"./src/constants/*"
+			],
+			"~components/*": [
+				"./src/components/*"
+			],
+			"~hooks/*": [
+				"./src/hooks/*"
+			],
+			"~store/*": [
+				"./src/store/*"
+			],
+			"~interfaces/*": [
+				"./src/interfaces/*"
+			],
+			"~utils/*": [
+				"./src/utils/*"
+			]
+		}
 	},
-	"include": ["./src/**/*"]
+	"include": [
+		"./src/**/*"
+	]
 }
