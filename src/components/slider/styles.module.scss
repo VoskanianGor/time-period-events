@@ -2,17 +2,23 @@
   position: relative;
   max-width: 1200px;
   min-height: 135px;
-  margin-top: 96px;
+  margin-top: 56px;
 }
 
 .swiper {
   position: static !important;
   display: flex;
+  width: 80vw;
+  max-width: 1200px;
 }
 
 .slide {
   opacity: 0;
   animation: fade-in 1.2s ease forwards;
+
+  &:last-child>div {
+    opacity: 1 !important;
+  }
 
   @for $i from 1 through 12 {
     &:nth-child(#{$i}) {

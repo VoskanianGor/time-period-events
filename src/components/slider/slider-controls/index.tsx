@@ -26,6 +26,7 @@ const SliderControls = () => {
     swiper.on('slideChange', () => {
       setIsBeginning(swiper.isBeginning)
       setIsEnd(swiper.isEnd)
+      // swiper.
     })
 
     return () => {
@@ -33,8 +34,8 @@ const SliderControls = () => {
     }
   }, [swiper])
 
-  const next = () => swiper.slideNext()
-  const prev = () => swiper.slidePrev()
+  const onNext = () => swiper.slideNext()
+  const onPrev = () => swiper.slidePrev()
 
   return (
     <>
@@ -43,8 +44,10 @@ const SliderControls = () => {
           key={button.id}
           className={classNames(button.className, {
             [styles.disabled]: button.type === 'prev' ? isBeginning : isEnd,
+            // [styles.disabled]:
           })}
-          onClick={button.type === 'prev' ? prev : next}
+          onClick={button.type === 'prev' ? onPrev : onNext}
+          type='button'
         >
           <SliderButtonIcon />
         </button>

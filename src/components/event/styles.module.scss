@@ -6,6 +6,13 @@
   @extend %flex-col;
 
   gap: 15px;
+  margin-right: clamp(1.56rem, calc(0.88rem + 3.44vw), 5.00rem);
+
+  @media screen and (max-width: $bp-tablet) {
+    &.next {
+      opacity: 0.4;
+    }
+  }
 }
 
 .year {
