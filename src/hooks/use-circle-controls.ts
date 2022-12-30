@@ -1,10 +1,9 @@
+import { useCircleContext } from '~context/circle-context'
 import ICords from '~interfaces/i-cords'
 import TOnPointClick from '~interfaces/t-on-point-click'
-import { useGlobalState } from './use-global-state'
 
 const useCircleControls = (points: ICords[], onPointClick: TOnPointClick) => {
-  const [activeTimePeriod, setActiveTimePeriod] =
-    useGlobalState('activeTimePeriod')
+  const { activeTimePeriod, setActiveTimePeriod } = useCircleContext()
 
   const currentPeriod = activeTimePeriod + 1
   const periodsCount = points?.length

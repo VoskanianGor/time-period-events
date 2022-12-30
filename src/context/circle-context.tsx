@@ -1,28 +1,34 @@
 import React, { createContext, useContext } from 'react'
 import type FCC from '~interfaces/fcc'
 import useCirclePoints from '~hooks/use-circle-points'
-import generateRandomPeriods from '~utils/generate-random-periods'
 import TOnPointClick from '~interfaces/t-on-point-click'
 import ITimePeriod from '~interfaces/i-time-period'
 import ICords from '~interfaces/i-cords'
+import generateRandomPeriods from '~utils/generate-random-periods'
 
 interface ICircleContext {
   timePeriods: ITimePeriod[]
   points?: ICords[]
   circleRef: React.RefObject<HTMLDivElement>
   onPointClick: TOnPointClick
+  setActiveTimePeriod: (activeTimePeriod: number) => void
   activeTimePeriod: number
   rotate: number
 }
 
-// generate random time periods every time when the app is loaded
 const timePeriods = generateRandomPeriods()
 
 const CircleContext = createContext<ICircleContext>({} as ICircleContext)
 
 const CircleProvider: FCC = ({ children }) => {
-  const { points, circleRef, rotate, onPointClick, activeTimePeriod } =
-    useCirclePoints(timePeriods)
+  const {
+    points,
+    circleRef,
+    rotate,
+    onPointClick,
+    activeTimePeriod,
+    setActiveTimePeriod,
+  } = useCirclePoints(timePeriods)
 
   return (
     <CircleContext.Provider
@@ -33,6 +39,7 @@ const CircleProvider: FCC = ({ children }) => {
         circleRef,
         onPointClick,
         activeTimePeriod,
+        setActiveTimePeriod,
       }}
     >
       {children}
