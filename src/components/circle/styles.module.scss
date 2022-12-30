@@ -11,6 +11,7 @@
 .wrapper {
   position: relative;
   isolation: isolate;
+  margin-bottom: -50px;
 
   &::before {
     @extend %layout-line;

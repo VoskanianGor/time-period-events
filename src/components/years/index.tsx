@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
-import type { FC } from 'react'
 import CountUp from 'react-countup'
 import styles from './styles.module.scss'
-
-interface IYears {
-  years: [number, number]
-}
+import { useCircleContext } from '~context/circle-context'
 
 let oldYears = [0, 0]
 
-const Years: FC<IYears> = ({ years }) => {
+const Years = () => {
+  const { activeTimePeriod, timePeriods } = useCircleContext()
+
+  const years = timePeriods[activeTimePeriod].years
+
   useEffect(() => {
     oldYears = years
   }, [years])

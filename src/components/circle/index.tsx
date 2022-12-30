@@ -1,8 +1,7 @@
-import React, { useLayoutEffect, useRef, useState } from 'react'
+import React from 'react'
 import { useCircleContext } from '~context/circle-context'
 import Years from '~components/years'
 import CircleOutline from './circle-outline'
-import CircleControls from './circle-controls'
 import Point from './point'
 import styles from './styles.module.scss'
 
@@ -16,11 +15,9 @@ const Circle = () => {
     timePeriods,
   } = useCircleContext()
 
-  const years = timePeriods[activeTimePeriod].years
-
   return (
     <div className={styles.wrapper}>
-      <Years years={years} />
+      <Years />
       <div
         className={styles.circle}
         ref={circleRef}
