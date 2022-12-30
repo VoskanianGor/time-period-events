@@ -6,6 +6,9 @@ const useCircleControls = (points: ICords[], onPointClick: TOnPointClick) => {
   const [activeTimePeriod, setActiveTimePeriod] =
     useGlobalState('activeTimePeriod')
 
+  const currentPeriod = activeTimePeriod + 1
+  const periodsCount = points?.length
+
   const nextActiveTimePeriod = activeTimePeriod + 1
   const prevActiveTimePeriod = activeTimePeriod - 1
 
@@ -27,6 +30,8 @@ const useCircleControls = (points: ICords[], onPointClick: TOnPointClick) => {
     onPrev,
     isNextDisabled,
     isPrevDisabled,
+    currentPeriod,
+    periodsCount,
   }
 }
 

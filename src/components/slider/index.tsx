@@ -1,17 +1,14 @@
 import React from 'react'
-import type { FC } from 'react'
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useCircleContext } from '~context/circle-context'
 import Event from '~components/event'
-import type IEvent from '~interfaces/i-event'
 import SliderControls from './slider-controls'
 import styles from './styles.module.scss'
 
-interface IEventSlider {
-  events: IEvent[]
-}
-
-const EventSlider: FC<IEventSlider> = ({ events }) => {
+const EventSlider = () => {
+  const { activeTimePeriod, timePeriods } = useCircleContext()
+  const events = timePeriods[activeTimePeriod].events
   return (
     <div className={styles.slider}>
       <Swiper

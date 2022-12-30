@@ -1,25 +1,26 @@
 import classNames from 'classnames'
-import React, { FC } from 'react'
-import type TOnPointClick from '~interfaces/t-on-point-click'
+import React from 'react'
 import CircleButton from '~assets/icons/circle-button.svg'
 import useCircleControls from '~hooks/use-circle-controls'
-import ICords from '~interfaces/i-cords'
 import styles from './styles.module.scss'
+import { useCircleContext } from '~context/circle-context'
 
-interface ICircleControls {
-  points: ICords[]
-  onPointClick: TOnPointClick
-}
-
-const CircleControls: FC<ICircleControls> = ({ points, onPointClick }) => {
-  const { onNext, onPrev, isNextDisabled, isPrevDisabled } = useCircleControls(
-    points,
-    onPointClick,
-  )
+const CircleControls = () => {
+  const { points, onPointClick } = useCircleContext()
+  const {
+    onNext,
+    onPrev,
+    isNextDisabled,
+    isPrevDisabled,
+    currentPeriod,
+    periodsCount,
+  } = useCircleControls(points ?? [], onPointClick)
 
   return (
-    <div>
-      <div className={styles.pagination}>06/06</div>
+    <div className={styles.controls}>
+      <div className={styles.pagination}>
+        0{currentPeriod}/0{periodsCount}
+      </div>
       <div className={styles.buttons}>
         <button
           className={classNames(styles.prev, {

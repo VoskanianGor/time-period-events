@@ -14,10 +14,17 @@
   }
 }
 
+.controls {
+  @extend %flex;
+  @extend %flex-col;
+
+  gap: clamp(0.50rem, calc(0.35rem + 0.75vw), 1.25rem);
+  max-width: fit-content;
+}
+
 .buttons {
   @extend %flex-center;
   gap: clamp(0.50rem, calc(0.35rem + 0.75vw), 1.25rem);
-  margin-top: 100px;
 }
 
 .prev {

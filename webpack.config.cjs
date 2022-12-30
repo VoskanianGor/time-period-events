@@ -56,6 +56,7 @@ module.exports = {
       '~hooks': path.resolve(__dirname, 'src/hooks'),
       '~interfaces': path.resolve(__dirname, 'src/interfaces'),
       '~constants': path.resolve(__dirname, 'src/constants'),
+      '~context': path.resolve(__dirname, 'src/context'),
     },
     extensions: ['.ts', '.tsx', '.js', '.jsx']
   }

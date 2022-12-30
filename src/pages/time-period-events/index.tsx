@@ -1,23 +1,20 @@
 import React from 'react'
+import { CircleProvider } from '~context/circle-context'
 import Circle from '~components/circle'
 import EventSlider from '~components/slider'
-import { useGlobalState } from '~hooks/use-global-state'
-import generateRandomPeriods from '~utils/generate-random-periods'
-// import timePeriods from './data'
+import CircleControls from '~components/circle/circle-controls'
 import styles from './styles.module.scss'
 import 'swiper/css'
 
-const timePeriods = generateRandomPeriods()
-
 const TimePeriodEvents = () => {
-  const [activeTimePeriod] = useGlobalState('activeTimePeriod')
-  const events = timePeriods[activeTimePeriod].events
-
   return (
-    <div className={styles.wrapper}>
-      <Circle timePeriods={timePeriods} />
-      <EventSlider events={events} />
-    </div>
+    <CircleProvider>
+      <div className={styles.wrapper}>
+        <Circle />
+        <EventSlider />
+        <CircleControls />
+      </div>
+    </CircleProvider>
   )
 }
 

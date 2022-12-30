@@ -5,7 +5,7 @@ import placePointsOnCircle from '~utils/place-points-on-circle'
 import { useGlobalState } from './use-global-state'
 
 const useCirclePoints = (timePeriods: any[]) => {
-  const [points, setPoints] = useState<ICords[]>()
+  const [points, setPoints] = useState<ICords[]>([])
   const [rotate, setRotate] = useState(-45)
   const [activeTimePeriod, setActiveTimePeriod] =
     useGlobalState('activeTimePeriod')
