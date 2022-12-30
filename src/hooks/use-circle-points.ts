@@ -1,12 +1,12 @@
-import { useState, useRef, useLayoutEffect } from "react"
-import ICords from "~interfaces/i-cords"
-import placePointsOnCircle from "~utils/place-points-on-circle"
-
+import { useState, useRef, useLayoutEffect } from 'react'
+import ICords from '~interfaces/i-cords'
+import placePointsOnCircle from '~utils/place-points-on-circle'
+import { useGlobalState } from './use-global-state'
 
 const useCirclePoints = (timePeriods: any[]) => {
   const [points, setPoints] = useState<ICords[]>()
   const [rotate, setRotate] = useState(-45)
-  const [activePoint, setActivePoint] = useState(0)
+  const [activePoint, setActivePoint] = useGlobalState('activeTimePeriod')
   const circleRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {

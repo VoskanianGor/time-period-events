@@ -3,7 +3,6 @@ import type { FC } from 'react'
 import classNames from 'classnames'
 import type ICords from '~interfaces/i-cords'
 import styles from './styles.module.scss'
-import { setGlobalState } from '~hooks/use-global-state'
 
 interface IPoint {
   index: number
@@ -26,10 +25,7 @@ const Point: FC<IPoint> = ({
     }px) rotate(${-circleRotate}deg)`,
   }
 
-  const handleClick = () => {
-    onPointClick(cords.r, index)
-    setGlobalState('activeTimePeriod', index)
-  }
+  const handleClick = () => onPointClick(cords.r, index)
 
   return (
     <div
