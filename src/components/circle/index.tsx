@@ -1,24 +1,24 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import type { FC } from 'react'
+import type ITimePeriod from '~interfaces/i-time-period'
 import useCirclePoints from '~hooks/use-circle-points'
-import { getGlobalState } from '~hooks/use-global-state'
 import Years from '~components/years'
 import CircleOutline from './circle-outline'
 import Point from './point'
 import styles from './styles.module.scss'
 
 interface ICircle {
-  timePeriods: any[]
+  timePeriods: ITimePeriod[]
 }
 
 const Circle: FC<ICircle> = ({ timePeriods }) => {
-  const activeTimePeriod = getGlobalState('activeTimePeriod')
-  const { points, rotate, activePoint, circleRef, onPointClick } =
+  const { points, rotate, activeTimePeriod, circleRef, onPointClick } =
     useCirclePoints(timePeriods)
+  const years = timePeriods[activeTimePeriod].years
 
   return (
     <div className={styles.wrapper}>
-      <Years years={timePeriods[activeTimePeriod].years} />
+      <Years years={years} />
       <div
         className={styles.circle}
         ref={circleRef}
@@ -31,8 +31,9 @@ const Circle: FC<ICircle> = ({ timePeriods }) => {
           <Point
             key={index}
             index={index}
+            category={timePeriods[index].category}
             cords={cords}
-            isActive={index === activePoint}
+            isActive={index === activeTimePeriod}
             circleRotate={rotate}
             onPointClick={onPointClick}
           />

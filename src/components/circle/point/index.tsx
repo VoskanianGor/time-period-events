@@ -6,6 +6,7 @@ import styles from './styles.module.scss'
 
 interface IPoint {
   index: number
+  category: string
   cords: ICords
   isActive: boolean
   circleRotate: number
@@ -14,6 +15,7 @@ interface IPoint {
 
 const Point: FC<IPoint> = ({
   index,
+  category,
   cords,
   isActive,
   circleRotate,
@@ -35,6 +37,7 @@ const Point: FC<IPoint> = ({
       onClick={handleClick}
       style={rotate}
       data-index={index + 1}
+      data-category={category}
     />
   )
 }

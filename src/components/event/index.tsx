@@ -1,11 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react'
 import type { FC } from 'react'
+import type IEvent from '~interfaces/i-event'
 import styles from './styles.module.scss'
-
-interface IEvent {
-  year: number
-  description: string
-}
 
 const Event: FC<IEvent> = ({ year, description }) => {
   return (

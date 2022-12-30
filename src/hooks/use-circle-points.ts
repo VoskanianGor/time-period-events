@@ -6,7 +6,8 @@ import { useGlobalState } from './use-global-state'
 const useCirclePoints = (timePeriods: any[]) => {
   const [points, setPoints] = useState<ICords[]>()
   const [rotate, setRotate] = useState(-45)
-  const [activePoint, setActivePoint] = useGlobalState('activeTimePeriod')
+  const [activeTimePeriod, setActiveTimePeriod] =
+    useGlobalState('activeTimePeriod')
   const circleRef = useRef<HTMLDivElement>(null)
 
   useLayoutEffect(() => {
@@ -17,7 +18,7 @@ const useCirclePoints = (timePeriods: any[]) => {
 
   const onPointClick = (rotate: number, index: number) => {
     setRotate(-rotate - 45)
-    setActivePoint(index)
+    setActiveTimePeriod(index)
   }
 
   return {
@@ -25,7 +26,7 @@ const useCirclePoints = (timePeriods: any[]) => {
     circleRef,
     rotate,
     onPointClick,
-    activePoint,
+    activeTimePeriod,
   }
 }
 

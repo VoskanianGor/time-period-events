@@ -1,3 +1,5 @@
+import ITimePeriod from '~interfaces/i-time-period'
+
 const timePeriods = [
   {
     years: [2015, 2022],
@@ -100,4 +102,4 @@ const timePeriods = [
   },
 ]
 
-export default timePeriods
+export default timePeriods as ITimePeriod[]
