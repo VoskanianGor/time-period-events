@@ -1,5 +1,6 @@
 import { useState, useRef, useLayoutEffect } from 'react'
 import ICords from '~interfaces/i-cords'
+import type TOnPointClick from '~interfaces/t-on-point-click'
 import placePointsOnCircle from '~utils/place-points-on-circle'
 import { useGlobalState } from './use-global-state'
 
@@ -16,7 +17,7 @@ const useCirclePoints = (timePeriods: any[]) => {
     setPoints(placePointsOnCircle(timePeriods.length, circleWidth))
   }, [setPoints, timePeriods.length, circleRef])
 
-  const onPointClick = (rotate: number, index: number) => {
+  const onPointClick: TOnPointClick = (rotate, index) => {
     setRotate(-rotate - 45)
     setActiveTimePeriod(index)
   }

@@ -18,8 +18,9 @@ const Years: FC<IYears> = ({ years }) => {
     <div className={styles.years}>
       {years.map((year, index) => (
         <CountUp
+          key={index}
           className={styles.year}
-          start={oldYears[index] || years[index]}
+          start={oldYears[index] || year}
           end={years[index]}
           duration={1}
         />

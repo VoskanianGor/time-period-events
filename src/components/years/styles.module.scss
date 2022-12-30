@@ -13,7 +13,7 @@
 
 .year {
   font-weight: 700;
-  font-size: 200px;
+  font-size: clamp(3.50rem, calc(1.70rem + 9.00vw), 12.50rem);
   line-height: 80%;
   text-align: center;
   letter-spacing: -0.02em;

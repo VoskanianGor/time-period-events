@@ -1,0 +1,45 @@
+@import '/src/styles/vars';
+@import '/src/styles/temp';
+
+%circle-button {
+  @extend %flex-center;
+  --dim: clamp(1.56rem, calc(1.25rem + 1.56vw), 3.13rem);
+  width: var(--dim);
+  height: var(--dim);
+  border-radius: 50%;
+
+  svg {
+    width: var(--dim);
+    height: var(--dim);
+  }
+}
+
+.buttons {
+  @extend %flex-center;
+  gap: clamp(0.50rem, calc(0.35rem + 0.75vw), 1.25rem);
+  margin-top: 100px;
+}
+
+.prev {
+  @extend %circle-button;
+}
+
+.next {
+  @extend %circle-button;
+  transform: rotate(180deg);
+}
+
+.disabled {
+
+  &.prev,
+  &.next {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+.pagination {
+  font-size: 14px;
+  line-height: 18px;
+  color: $c-primary;
+}

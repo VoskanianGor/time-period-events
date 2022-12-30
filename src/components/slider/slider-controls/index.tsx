@@ -45,6 +45,7 @@ const SliderControls = () => {
             [styles.disabled]: button.type === 'prev' ? isBeginning : isEnd,
           })}
           onClick={button.type === 'prev' ? prev : next}
+          type='button'
         >
           <SliderButtonIcon />
         </button>

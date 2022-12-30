@@ -5,6 +5,7 @@ import useCirclePoints from '~hooks/use-circle-points'
 import Years from '~components/years'
 import CircleOutline from './circle-outline'
 import Point from './point'
+import CircleControls from './circle-controls'
 import styles from './styles.module.scss'
 
 interface ICircle {
@@ -39,6 +40,7 @@ const Circle: FC<ICircle> = ({ timePeriods }) => {
           />
         ))}
       </div>
+      <CircleControls points={points || []} onPointClick={onPointClick} />
     </div>
   )
 }
