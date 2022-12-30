@@ -1,25 +1,30 @@
 import React from 'react'
-import type { FC } from 'react'
-import { Navigation } from 'swiper'
+import { Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useCircleContext } from '~context/circle-context'
+import useWindowSize from '~hooks/use-window-size'
 import Event from '~components/event'
-import type IEvent from '~interfaces/i-event'
 import SliderControls from './slider-controls'
 import styles from './styles.module.scss'
+import 'swiper/css/pagination'
+import 'swiper/css'
 
-interface IEventSlider {
-  events: IEvent[]
-}
+const EventSlider = () => {
+  const { activeTimePeriod, timePeriods } = useCircleContext()
+  const events = timePeriods[activeTimePeriod].events
+  const { isMatchWith, width } = useWindowSize({ matchWith: 768 })
 
-const EventSlider: FC<IEventSlider> = ({ events }) => {
+  console.log(isMatchWith)
+
   return (
     <div className={styles.slider}>
       <Swiper
         grabCursor
         className={styles.swiper}
-        modules={[Navigation]}
-        spaceBetween={80}
-        slidesPerView={3}
+        modules={[Navigation, Pagination]}
+        spaceBetween={0}
+        slidesPerView={isMatchWith ? 2 : 3}
+        pagination={isMatchWith}
       >
         {events.map((event) => (
           <SwiperSlide key={event.id} className={styles.slide}>

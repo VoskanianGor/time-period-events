@@ -2,6 +2,7 @@ import React from 'react'
 import type { FC } from 'react'
 import classNames from 'classnames'
 import type ICords from '~interfaces/i-cords'
+import type TOnPointClick from '~interfaces/t-on-point-click'
 import styles from './styles.module.scss'
 
 interface IPoint {
@@ -10,7 +11,7 @@ interface IPoint {
   cords: ICords
   isActive: boolean
   circleRotate: number
-  onPointClick: (rotate: number, index: number) => void
+  onPointClick: TOnPointClick
 }
 
 const Point: FC<IPoint> = ({
