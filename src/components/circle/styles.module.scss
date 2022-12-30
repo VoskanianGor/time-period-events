@@ -6,6 +6,10 @@
   background: $c-primary;
   opacity: 0.1;
   z-index: -1;
+
+  @media screen and (max-width: $bp-tablet) {
+    display: none;
+  }
 }
 
 .wrapper {

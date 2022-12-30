@@ -18,13 +18,13 @@ button {
   cursor: pointer;
 }
 
-.container {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 15px;
+.swiper-pagination {
+  @media (max-width: 768px) {
+    position: absolute;
+    bottom: -60% !important;
+    transform: translateY(-100%);
+  }
 }
-
-.slider {
-  display: flex;
-  position: static;
+.swiper-pagination-bullet-active {
+  background-color: #42567A;
 }
