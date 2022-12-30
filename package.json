@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
-    "build": "webpack --mode production --output public",
+    "build": "webpack --mode production",
     "rome:check": "npx rome check --apply-suggested ./src",
     "rome:format": "npx rome format ./src --write"
   },
