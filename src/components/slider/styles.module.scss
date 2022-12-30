@@ -1,0 +1,35 @@
+.slider {
+  position: relative;
+  max-width: 1200px;
+  min-height: 135px;
+  margin-top: 96px;
+}
+
+.swiper {
+  position: static !important;
+  display: flex;
+}
+
+.slide {
+  opacity: 0;
+  animation: fade-in 1.2s ease forwards;
+
+  @for $i from 1 through 12 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.1s * $i;
+    }
+  }
+}
+
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

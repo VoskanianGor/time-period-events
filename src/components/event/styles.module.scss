@@ -1,0 +1,23 @@
+@import '/src/styles/vars';
+@import '/src/styles/temp';
+
+.event {
+  @extend %flex;
+  @extend %flex-col;
+
+  gap: 15px;
+}
+
+.year {
+  color: $c-blue;
+  font-weight: 700;
+  font-size: clamp(1.00rem, calc(0.89rem + 0.56vw), 1.56rem);
+  line-height: 120%;
+  text-transform: uppercase;
+}
+
+.description {
+  color: $c-primary;
+  font-size: clamp(0.88rem, calc(0.80rem + 0.38vw), 1.25rem);
+  line-height: 150%;
+}

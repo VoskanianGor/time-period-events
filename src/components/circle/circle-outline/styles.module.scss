@@ -1,0 +1,10 @@
+@import '/src/styles/vars';
+
+.circleOutline {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
+  border: 1px solid $c-primary;
+  border-radius: 50%;
+}
